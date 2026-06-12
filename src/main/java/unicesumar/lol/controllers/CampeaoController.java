@@ -8,6 +8,7 @@ import unicesumar.lol.models.CampeaoModel;
 import unicesumar.lol.services.CampeaoService;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -23,7 +24,7 @@ public class CampeaoController {
     }
 
     @GetMapping("/{nome}")
-    public CampeaoModel findByNome(@PathVariable String nome) {
+    public Optional<CampeaoModel> findByNome(@PathVariable String nome) {
         return campeaoService.findByNome(nome);
     }
 

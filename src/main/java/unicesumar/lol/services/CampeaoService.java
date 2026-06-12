@@ -6,6 +6,7 @@ import unicesumar.lol.models.CampeaoModel;
 import unicesumar.lol.repositories.CampeaoRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CampeaoService {
@@ -13,7 +14,7 @@ public class CampeaoService {
     @Autowired
     private CampeaoRepository campeaoRepository;
 
-    public CampeaoModel findByNome(String nome) {
+    public Optional<CampeaoModel> findByNome(String nome) {
         return campeaoRepository.findByNome(nome);
     }
 
